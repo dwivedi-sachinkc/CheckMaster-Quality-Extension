@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Migration Quality Check",
+  "description": "This extension verifies that QA is done properly.",
+  "version": "1.0",
+
+  "browser_action": {
+      "default_icon": "icon.png",
+      "default_title": "Migration QA Check"
+   },
+   "icons":{
+      "128": "icon128.png" 
+   },
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "popup-style.css" ],
+      "js": [ "jquery.js", "handler.js" ],
+      "matches": ["https://www.wrike.com/workspace.htm*path=overview*"]
+   } ]
+}
